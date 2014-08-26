@@ -20,7 +20,7 @@
 #error "`ft2build.h' hasn't been included yet!"
 #error "Please always use macros to include FreeType header files."
 #error "Example:"
-#error "  #include <include/ft2build.h>"
+#error "  #include <ft2build.h>"
 #error "  #include FT_FREETYPE_H"
 #endif
 
@@ -29,7 +29,7 @@
 #define __FREETYPE_H__
 
 
-#include <include/ft2build.h>
+#include <ft2build.h>
 #include FT_CONFIG_CONFIG_H
 #include FT_ERRORS_H
 #include FT_TYPES_H
@@ -2922,7 +2922,7 @@ FT_BEGIN_HEADER
   /*                                                                       */
   /*    This function is not compiled within the library if the config     */
   /*    macro `FT_CONFIG_OPTION_NO_GLYPH_NAMES' is defined in              */
-  /*    `include/freetype/config/ftoptions.h'.                             */
+  /*    `freetype/config/ftoptions.h'.                             */
   /*                                                                       */
   FT_EXPORT( FT_Error )
   FT_Get_Glyph_Name( FT_Face     face,

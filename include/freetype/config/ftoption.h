@@ -40,7 +40,7 @@
 #endif /* _MSC_VER >= 1300 */
 #endif /* _MSC_VER */
 
-#include <include/ft2build.h>
+#include <ft2build.h>
 
 
 FT_BEGIN_HEADER

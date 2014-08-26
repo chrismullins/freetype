@@ -31,14 +31,14 @@
   /* contains system-specific files that are always included first when    */
   /* building the library.                                                 */
   /*                                                                       */
-  /* This ANSI version should stay in `include/freetype/config'.           */
+  /* This ANSI version should stay in `freetype/config'.           */
   /*                                                                       */
   /*************************************************************************/
 
 #ifndef __FTCONFIG_H__
 #define __FTCONFIG_H__
 
-#include <include/ft2build.h>
+#include <ft2build.h>
 #include FT_CONFIG_OPTIONS_H
 #include FT_CONFIG_STANDARD_LIBRARY_H
 

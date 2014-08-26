@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 2.8)
 PROJECT (FREETYPE)
 
 #
@@ -5,7 +6,6 @@ PROJECT (FREETYPE)
 #
 INCLUDE_REGULAR_EXPRESSION (".*")
 
-#find_package(zlib)
 #
 # Include paths
 #
@@ -74,6 +74,7 @@ IF (UNIX)
   ENDIF (CMAKE_SYSTEM MATCHES "HP-UX.*")
   SET (FREETYPE_SRCS ${FREETYPE_SRCS} builds/unix/ftsystem.c)
   INCLUDE (${CMAKE_ROOT}/Modules/CheckIncludeFileCXX.cmake)
+  # This line is not finding fcntl.h, figure out why.
   CHECK_INCLUDE_FILE_CXX("fcntl.h" HAVE_FCNTL_H)
   CHECK_INCLUDE_FILE_CXX("unistd.h" HAVE_UNISTD_H)
   CONFIGURE_FILE (builds/unix/ftconfig.in
@@ -130,8 +131,6 @@ CONFIGURE_FILE (${CMAKE_SOURCE_DIR}/include/FreeTypeConfig.h.in
 IF(NOT INSTALL_NO_DEVELOPMENT)
   INSTALL(FILES
     ${CMAKE_SOURCE_DIR}/include/ft2build.h
-#    ${CMAKE_SOURCE_DIR}/include/vtk_freetype_mangle.h
-#    ${CMAKE_SOURCE_DIR}/include/vtk_ftmodule.h
     ${CMAKE_BINARY_DIR}/include/FreeTypeConfig.h
     DESTINATION ${CMAKE_INSTALL_PREFIX}/include
     COMPONENT Development)
